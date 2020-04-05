@@ -633,7 +633,6 @@ Login failed!"`
 - tactics: inital_access
 - tactics: lateral_movement
 
-```
 ## check ASREPRoast for all domain users (credentials required)
 - `python GetNPUsers.py <domain_name>/<domain_user>:<domain_user_password> -request -format <AS_REP_responses_format [hashcat | john]> -outputfile <output_AS_REP_responses_file>`
 
