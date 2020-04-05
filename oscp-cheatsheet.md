@@ -48,6 +48,15 @@
 
 ---
 
+# fuff
+- service: http
+- tactics: enumeration
+
+## bruteforce web directories
+- `ffuf -w /path/to/wordlist -u https://target/FUZZ`
+
+---
+
 # davtest
 - service: webdav
 - tactics: enumeration
