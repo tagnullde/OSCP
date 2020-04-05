@@ -2,7 +2,7 @@
 
 These are my OSCP notes and exploits I wrote while preparing.
 
-## OSCP-Cheatsheet useage
+## OSCP-Cheatsheet usage
 
 The cheatsheet is meant to be as searchable as possible.
 A such you have the following options to search for an entry:
