@@ -52,7 +52,9 @@
 - service: http
 - tactics: enumeration
 
-## tbd
+## bruteforce ...
+
+- `no example yet`
 
 ---
 
@@ -60,7 +62,7 @@
 - service: webdav
 - tactics: enumeration
 
-## test webdav uploadable files
+## tries to upload (executable) files to webdav
 - `davtest -url http://target-ip/ -sendbd auto`
 
 ---
