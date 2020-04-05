@@ -48,16 +48,6 @@
 
 ---
 
-# fuff
-- service: http
-- tactics: enumeration
-
-## bruteforce ...
-
-- `no example yet`
-
----
-
 # davtest
 - service: webdav
 - tactics: enumeration
