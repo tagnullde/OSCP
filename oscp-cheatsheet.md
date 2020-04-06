@@ -10,7 +10,7 @@
 ## scan all tcp ports  
 - `nmap -p- -oN all_ports.txt target-ip`
 
-## scan all tcp ports  
+## scan all udp ports  
 - `nmap -p- -sU -oN all_udp_ports.txt target-ip`
 
 ## use script categories  
