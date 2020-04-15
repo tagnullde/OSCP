@@ -25,8 +25,5 @@ Some parts of this document still need some work. Feel free to submit a PR.
 
 ## Exploit-Development
 
-In that folder you can find some exploits I wrote to prepare myself for the OSCP exam.
-The **rop** folder contains exploits for the challenges you can find on [ropemporium](https://ropemporium.com/).
-They provide you challenges beyond the scope required by Offensive Security.
-
+I moved this folder to it's own [repository](https://github.com/tagnullde/Exploit-Development)
 
