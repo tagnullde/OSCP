@@ -1159,8 +1159,9 @@ term.cmdloop()
 ### LFI / RFI
 [https://websec.wordpress.com](https://websec.wordpress.com/2010/02/22/exploiting-php-file-inclusion-overview/)
 
-### kerberosting
+### kerberosting & as_rep roasting
 [https://en.hackndo.com](https://en.hackndo.com/kerberoasting/)
+[https://luemmelsec.github.io](https://luemmelsec.github.io/Kerberoasting-VS-AS-REP-Roasting/)
 
 ### kerberos
 [https://www.roguelynn.com](https://www.roguelynn.com/words/explain-like-im-5-kerberos/)
