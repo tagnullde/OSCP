@@ -1204,49 +1204,49 @@ term.cmdloop()
 ## external ressources
 
 ### cheatsheets
-[Cheatsheet-God](https://github.com/OlivierLaflamme/Cheatsheet-God)
+[Cheatsheet-God](https://github.com/OlivierLaflamme/Cheatsheet-God)  
 
 ### compiling exploits
-[https://medium.com](https://medium.com/@_____________/compiling-exploits-4ec7bb9ec03c)
+[https://medium.com](https://medium.com/@_____________/compiling-exploits-4ec7bb9ec03c)  
 
 ### pivoting
-[https://www.ivoidwarranties.tech - (proxychains)](https://www.ivoidwarranties.tech/posts/pentesting-tuts/pivoting/proxychains)
-[https://posts.specterops.io - (ssh tunnels guide)](https://posts.specterops.io/offensive-security-guide-to-ssh-tunnels-and-proxies-b525cbd4d4c6)
+[https://www.ivoidwarranties.tech - (proxychains)](https://www.ivoidwarranties.tech/posts/pentesting-tuts/pivoting/proxychains)  
+[https://posts.specterops.io - (ssh tunnels guide)](https://posts.specterops.io/offensive-security-guide-to-ssh-tunnels-and-proxies-b525cbd4d4c6)  
 
 ### mimikatz
-[mimikatz](https://github.com/gentilkiwi/mimikatz/wiki/module-~-sekurlsa)
+[mimikatz](https://github.com/gentilkiwi/mimikatz/wiki/module-~-sekurlsa)  
 
 ### upgrade shell to meterpreter and bypass applocker
-[https://mlcsec.com](https://mlcsec.com/shell-upgrade-cheat-sheet/#msbuildexe)
+[https://mlcsec.com](https://mlcsec.com/shell-upgrade-cheat-sheet/#msbuildexe)  
 
 ### powershell
-[https://burmat.gitbook.io](https://burmat.gitbook.io/security/hacking/one-liners-and-dirty-scripts)
+[https://burmat.gitbook.io](https://burmat.gitbook.io/security/hacking/one-liners-and-dirty-scripts)  
 
 ### SQLi
-[http://securityidiots.com](http://securityidiots.com/Web-Pentest/SQL-Injection/bypass-login-using-sql-injection.html)
+[http://securityidiots.com](http://securityidiots.com/Web-Pentest/SQL-Injection/bypass-login-using-sql-injection.html)  
 
 ### LFI / RFI
-[https://websec.wordpress.com](https://websec.wordpress.com/2010/02/22/exploiting-php-file-inclusion-overview/)
+[https://websec.wordpress.com](https://websec.wordpress.com/2010/02/22/exploiting-php-file-inclusion-overview/)  
 
 ### kerberosting & as_rep roasting
-[https://en.hackndo.com](https://en.hackndo.com/kerberoasting/)
-[https://luemmelsec.github.io](https://luemmelsec.github.io/Kerberoasting-VS-AS-REP-Roasting/)
+[https://en.hackndo.com](https://en.hackndo.com/kerberoasting/)  
+[https://luemmelsec.github.io](https://luemmelsec.github.io/Kerberoasting-VS-AS-REP-Roasting/)  
 
 ### kerberos
-[https://www.roguelynn.com](https://www.roguelynn.com/words/explain-like-im-5-kerberos/)
+[https://www.roguelynn.com](https://www.roguelynn.com/words/explain-like-im-5-kerberos/)  
 
 ### oscp
-[https://github.com/xMilkPowderx](https://github.com/xMilkPowderx/OSCP)
-[Awesome-oscp](https://github.com/0x4D31/awesome-oscp)
+[https://github.com/xMilkPowderx](https://github.com/xMilkPowderx/OSCP)  
+[Awesome-oscp](https://github.com/0x4D31/awesome-oscp)  
 
 ### linux privilege escalation
-[https://blog.g0tmi1k.com](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
-[hacktricks-capabilities](https://book.hacktricks.xyz/linux-unix/privilege-escalation/linux-capabilities)
-[https://gtfobins.github.io](https://gtfobins.github.io/)
+[https://blog.g0tmi1k.com](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)  
+[hacktricks-capabilities](https://book.hacktricks.xyz/linux-unix/privilege-escalation/linux-capabilities)  
+[https://gtfobins.github.io](https://gtfobins.github.io/)  
 
 ### windows privilege escalation
-[https://github.com/frizb](https://github.com/frizb/Windows-Privilege-Escalation)
-[https://github.com/xapax](https://github.com/xapax/security/blob/master/privilege_escalation_windows.md)
+[https://github.com/frizb](https://github.com/frizb/Windows-Privilege-Escalation)  
+[https://github.com/xapax](https://github.com/xapax/security/blob/master/privilege_escalation_windows.md)  
 [http://travisaltman.com](http://travisaltman.com/windows-privilege-escalation-via-weak-service-permissions/)  
 [http://www.fuzzysecurity.com](http://www.fuzzysecurity.com/tutorials/16.html)  
 [https://www.offensive-security.com](https://www.offensive-security.com/metasploit-unleashed/privilege-escalation/)  
@@ -1255,5 +1255,5 @@ term.cmdloop()
 [http://bernardodamele.blogspot.cl](http://bernardodamele.blogspot.cl/2011/12/dump-windows-password-hashes.html)  
 [http://www.harmj0y.net](http://www.harmj0y.net/blog/powershell/powerup-a-usage-guide/)  
 [https://github.com/PowerShellEmpire](https://github.com/PowerShellEmpire/PowerTools/tree/master/PowerUp)  
-[http://pwnwiki.io](http://pwnwiki.io/#!privesc/windows/index.md)
-[https://lolbas-project.github.io/#](https://lolbas-project.github.io/)
+[http://pwnwiki.io](http://pwnwiki.io/#!privesc/windows/index.md)  
+[https://lolbas-project.github.io/#](https://lolbas-project.github.io/)  
