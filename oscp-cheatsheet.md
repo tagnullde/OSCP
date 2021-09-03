@@ -1210,7 +1210,8 @@ term.cmdloop()
 [https://medium.com](https://medium.com/@_____________/compiling-exploits-4ec7bb9ec03c)
 
 ### pivoting
-[https://www.ivoidwarranties.tech](https://www.ivoidwarranties.tech/posts/pentesting-tuts/pivoting/proxychains)
+[https://www.ivoidwarranties.tech - (proxychains)](https://www.ivoidwarranties.tech/posts/pentesting-tuts/pivoting/proxychains)
+[https://posts.specterops.io - (ssh tunnels guide)](https://posts.specterops.io/offensive-security-guide-to-ssh-tunnels-and-proxies-b525cbd4d4c6)
 
 ### mimikatz
 [mimikatz](https://github.com/gentilkiwi/mimikatz/wiki/module-~-sekurlsa)
