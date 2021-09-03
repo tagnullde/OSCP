@@ -1,8 +1,8 @@
-# OSCP
+# OSCP / HackTheBox
 
-These are my OSCP notes and exploits I wrote while preparing.
+These are my notes and exploits I wrote while preparing for the OSCP and playing CTF on HackTheBox.
 
-## OSCP-Cheatsheet usage
+## Cheatsheet usage
 
 The cheatsheet is meant to be as searchable as possible.
 A such you have the following options to search for an entry:
