@@ -14,7 +14,7 @@
 - `nmap -p- -sU -oN all_udp_ports.txt target-ip`
 
 ## use script categories  
-- `nmap --scripts vuln,safe,discovery -oN scan.txt target-ip`
+- `nmap --script vuln,safe,discovery -oN scan.txt target-ip`
 
 ## list all nse scripts  
 - `ls -lh /usr/share/nmap/scripts/`
