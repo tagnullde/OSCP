@@ -101,7 +101,7 @@
 ## mount shares
 - `mount -o hard,nolock target-ip:/home folder`
 - `mount -t cifs -o user=username,domain=domainname //target-ip/share /mnt/folder`
-
+- `mount -t nfs target-ip:share /mnt/folder -o nolock`
 ---
 
 # showmount
