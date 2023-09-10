@@ -176,6 +176,10 @@
 ## enumerate installed software
 - `snmpwalk -c public -v1 target-ip 1.3.6.1.2.1.25.6.3.1.2`
 
+## make use of MIB files and translate the OIDs automatically
+- default folder for MIB files: `/usr/share/snmp/mibs`
+- `export MIBS=ALL`
+
 ---
 
 # onesixtyone
@@ -668,6 +672,15 @@ Login failed!"`
 ## connect to windows mssql Server
 - `mssqlclient.py -windows-auth username@target-ip`
 
+## list all databases
+- `select name from sys.databases`
+- `select name from master.dbo.sysdatabases`
+
+## use database
+- `use [database]`
+
+## get tables 
+- `select * from [database].information_schema.tables`
 ---
 
 # mssql-cli
