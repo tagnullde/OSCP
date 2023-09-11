@@ -93,6 +93,15 @@
 
 ---
 
+# smtp-user-enum
+- service: smtp
+- tactics: enumeration
+
+## verify that user exists on system with higher delay to make sure we get all responses
+- `smtp-user-enum -M VRFY -U user-file -t target-ip -m 60 -w 20`
+
+---
+
 # mount
 - service: smb
 - tactics: enumeration
@@ -179,15 +188,6 @@
 ## make use of MIB files and translate the OIDs automatically
 - default folder for MIB files: `/usr/share/snmp/mibs`
 - `export MIBS=ALL`
-
----
-
-# smtp-user-enum
-- service: smtp
-- tactics: enumeration
-
-## verify that user exists on system with higher delay to make sure we get all responses
-- `smtp-user-enum -M VRFY -U user-file -t target-ip -m 60 -w 20`
 
 ---
 
