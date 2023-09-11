@@ -93,15 +93,6 @@
 
 ---
 
-# smtp-user-enum
-- service: smtp
-- tactics: enumeration
-
-## verify that user exists on system with higher delay to make sure we get all responses
-- `smtp-user-enum -M VRFY -U user-file -t target-ip -m 60 -w 20`
-
----
-
 # mount
 - service: smb
 - tactics: enumeration
@@ -351,6 +342,15 @@ LIST
 # retrieve emails
 RETR 1
 ```
+
+---
+
+# smtp-user-enum
+- service: smtp
+- tactics: enumeration
+
+## verify that user exists on system with higher delay to make sure we get all responses
+- `smtp-user-enum -M VRFY -U user-file -t target-ip -m 60 -w 20`
 
 ---
 
